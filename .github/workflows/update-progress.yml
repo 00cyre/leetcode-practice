@@ -1,0 +1,56 @@
+name: Update progress tracker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/submission-*.*"
+      - "config/tracker.json"
+      - "data/neetcode150.json"
+      - "scripts/update_readme.py"
+      - "tests/**"
+      - ".github/workflows/update-progress.yml"
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-progress-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Test the tracker
+        run: python -m unittest discover -s tests -v
+
+      - name: Generate the README
+        run: python scripts/update_readme.py
+
+      - name: Commit an updated tracker
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README tracker is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- README.md
+          git commit -m "docs: update progress tracker [skip ci]"
+          git push origin HEAD:main
