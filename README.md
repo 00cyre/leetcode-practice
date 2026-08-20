@@ -5,13 +5,13 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 <!-- progress-tracker:start -->
 ## Progress
 
-**4 / 150 solved** · `█░░░░░░░░░░░░░░░░░░░` · **2.7%**
+**5 / 150 solved** · `█░░░░░░░░░░░░░░░░░░░` · **3.3%**
 
 | Metric | Value |
 |---|---:|
-| Unique roadmap problems | **4 / 150** |
-| Synced submission files | **7** |
-| Remaining problems | **146** |
+| Unique roadmap problems | **5 / 150** |
+| Synced submission files | **9** |
+| Remaining problems | **145** |
 | Latest submission streak | **1 day** |
 | Best activity streak | **1 day** |
 | Latest submission activity | **2026-08-20** |
@@ -23,14 +23,14 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | Difficulty | Progress | Completed |
 |---|---|---:|
 | Easy | `██░░░░░░░░░░░░` 10.7% | **3 / 28** |
-| Medium | `█░░░░░░░░░░░░░` 1.0% | **1 / 101** |
+| Medium | `█░░░░░░░░░░░░░` 2.0% | **2 / 101** |
 | Hard | `░░░░░░░░░░░░░░` 0.0% | **0 / 21** |
 
 ## Roadmap overview
 
 | Topic | Progress | Completed | Next unsolved |
 |---|---|---:|---|
-| Arrays & Hashing | `████░░░░░░` | **4 / 9** | [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) |
+| Arrays & Hashing | `██████░░░░` | **5 / 9** | [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) |
 | Two Pointers | `░░░░░░░░░░` | **0 / 5** | [Valid Palindrome](https://neetcode.io/problems/is-palindrome/question) |
 | Sliding Window | `░░░░░░░░░░` | **0 / 6** | [Best Time to Buy And Sell Stock](https://neetcode.io/problems/buy-and-sell-crypto/question) |
 | Stack | `░░░░░░░░░░` | **0 / 6** | [Valid Parentheses](https://neetcode.io/problems/validate-parentheses/question) |
@@ -57,18 +57,19 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | [Valid Anagram](https://neetcode.io/problems/is-anagram/question) ([solutions](Data%20Structures%20%26%20Algorithms/is-anagram)) | Arrays & Hashing | Easy | 3 | 2026-08-20 |
 | [Two Sum](https://neetcode.io/problems/two-integer-sum/question) ([solutions](Data%20Structures%20%26%20Algorithms/two-integer-sum)) | Arrays & Hashing | Easy | 1 | 2026-08-09 |
 | [Top K Frequent Elements](https://neetcode.io/problems/top-k-elements-in-list/question) ([solutions](Data%20Structures%20%26%20Algorithms/top-k-elements-in-list)) | Arrays & Hashing | Medium | 1 | 2026-08-20 |
+| [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) ([solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)) | Arrays & Hashing | Medium | 2 | 2026-08-20 |
 
 ## Full NeetCode 150 checklist
 
 <details>
-<summary><strong>Arrays & Hashing</strong> — 4/9</summary>
+<summary><strong>Arrays & Hashing</strong> — 5/9</summary>
 
 - [x] [Contains Duplicate](https://neetcode.io/problems/duplicate-integer/question) · Easy · [solutions](Data%20Structures%20%26%20Algorithms/duplicate-integer)
 - [x] [Valid Anagram](https://neetcode.io/problems/is-anagram/question) · Easy · [solutions](Data%20Structures%20%26%20Algorithms/is-anagram)
 - [x] [Two Sum](https://neetcode.io/problems/two-integer-sum/question) · Easy · [solutions](Data%20Structures%20%26%20Algorithms/two-integer-sum)
 - [ ] [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) · Medium
 - [x] [Top K Frequent Elements](https://neetcode.io/problems/top-k-elements-in-list/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/top-k-elements-in-list)
-- [ ] [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) · Medium
+- [x] [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)
 - [ ] [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) · Medium
 - [ ] [Valid Sudoku](https://neetcode.io/problems/valid-sudoku/question) · Medium
 - [ ] [Longest Consecutive Sequence](https://neetcode.io/problems/longest-consecutive-sequence/question) · Medium
