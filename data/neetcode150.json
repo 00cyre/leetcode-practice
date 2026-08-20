@@ -1,7 +1,6 @@
 {
   "name": "NeetCode 150",
   "source": "https://neetcode.io/practice/practice/neetcode150",
-  "source_bundle": "https://neetcode.io/main.f39af0c52a4e9fb5.js",
   "problems": [
     {
       "slug": "duplicate-integer",

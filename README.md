@@ -12,11 +12,11 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | Unique roadmap problems | **4 / 150** |
 | Synced submission files | **7** |
 | Remaining problems | **146** |
-| Current activity streak | **1 day** |
-| Best activity streak | **2 days** |
+| Latest submission streak | **1 day** |
+| Best activity streak | **1 day** |
 | Latest submission activity | **2026-08-20** |
 
-> Counts are derived from unique problem folders containing `submission-*` files. Activity streaks use submission commit dates plus the historical dates recorded in `config/tracker.json`.
+> Counts come from folder slugs under `Data Structures & Algorithms`. Activity streaks and last-active dates come only from commits that changed submission files.
 
 ### Difficulty
 
@@ -324,14 +324,13 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 
 - A roadmap problem is marked complete when its folder contains at least one `submission-*` file.
 - Multiple attempts increase the submission count but only count once toward the 150 problems.
-- Difficulty and roadmap placement come from the checked-in snapshot at [`data/neetcode150.json`](data/neetcode150.json).
-- Current and best streaks are calculated from commits that touch submission files. The initial historical dates visible in the supplied NeetCode screenshot are recorded in [`config/tracker.json`](config/tracker.json).
-- The GitHub Action tests and regenerates this README after relevant updates to `main`, then commits the refreshed tracker only when its contents changed.
+- Difficulty and roadmap placement come from the fixed slug map at [`data/neetcode150.json`](data/neetcode150.json); the pipeline makes no NeetCode or other network requests.
+- Latest and best streaks are calculated solely from commits that changed files under `Data Structures & Algorithms/<slug>/submission-*`; no scheduled run is needed.
+- The GitHub Action runs when NeetCode syncs a submission to `main`, correlates folder slugs with the fixed map, and commits the refreshed README only when its contents changed.
 
-To refresh the roadmap catalog manually from NeetCode's current public site data:
+To regenerate the README locally:
 
 ```bash
-python scripts/refresh_catalog.py
 python scripts/update_readme.py
 ```
 

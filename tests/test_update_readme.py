@@ -31,20 +31,18 @@ class ProgressTrackerTests(unittest.TestCase):
             {"Easy": 28, "Medium": 101, "Hard": 21},
         )
 
-    def test_streaks_include_historical_neetcode_activity(self) -> None:
-        current, best = update_readme.calculate_streaks(
-            {date(2026, 8, 9), date(2026, 8, 10), date(2026, 8, 20)},
-            date(2026, 8, 20),
+    def test_streaks_use_submission_commit_dates(self) -> None:
+        latest, best = update_readme.calculate_streaks(
+            {date(2026, 8, 9), date(2026, 8, 10), date(2026, 8, 20)}
         )
-        self.assertEqual(current, 1)
+        self.assertEqual(latest, 1)
         self.assertEqual(best, 2)
 
-    def test_current_streak_expires_after_a_missed_day(self) -> None:
-        current, best = update_readme.calculate_streaks(
-            {date(2026, 8, 9), date(2026, 8, 10)},
-            date(2026, 8, 20),
+    def test_latest_streak_is_stable_without_a_scheduled_run(self) -> None:
+        latest, best = update_readme.calculate_streaks(
+            {date(2026, 8, 9), date(2026, 8, 10)}
         )
-        self.assertEqual(current, 0)
+        self.assertEqual(latest, 2)
         self.assertEqual(best, 2)
 
     def test_discovers_and_groups_submission_files(self) -> None:
@@ -54,6 +52,11 @@ class ProgressTrackerTests(unittest.TestCase):
             problem.mkdir(parents=True)
             (problem / "submission-0.py").write_text("pass\n", encoding="utf-8")
             (problem / "submission-1.py").write_text("pass\n", encoding="utf-8")
+            unrelated_problem = root / "Other Track" / "two-integer-sum"
+            unrelated_problem.mkdir(parents=True)
+            (unrelated_problem / "submission-2.py").write_text(
+                "pass\n", encoding="utf-8"
+            )
             (root / "not-a-submission.py").write_text("pass\n", encoding="utf-8")
 
             submissions = update_readme.discover_submissions(root)
@@ -83,7 +86,6 @@ class ProgressTrackerTests(unittest.TestCase):
             {"one": [Path("solutions/one/submission-0.py")]},
             {date(2026, 8, 20)},
             {"one": date(2026, 8, 20)},
-            date(2026, 8, 20),
         )
 
         self.assertIn("**1 / 2 solved**", rendered)

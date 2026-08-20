@@ -5,14 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "**/submission-*.*"
-      - "config/tracker.json"
-      - "data/neetcode150.json"
-      - "scripts/update_readme.py"
-      - "tests/**"
-      - ".github/workflows/update-progress.yml"
-  schedule:
-    - cron: "15 0 * * *"
+      - "Data Structures & Algorithms/**/submission-*.*"
   workflow_dispatch:
 
 permissions:

@@ -21,6 +21,7 @@ CONFIG_PATH = ROOT / "config" / "tracker.json"
 START_MARKER = "<!-- progress-tracker:start -->"
 END_MARKER = "<!-- progress-tracker:end -->"
 DIFFICULTIES = ("Easy", "Medium", "Hard")
+SUBMISSIONS_DIRECTORY = "Data Structures & Algorithms"
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -29,10 +30,16 @@ def load_json(path: Path) -> dict[str, object]:
 
 def discover_submissions(root: Path = ROOT) -> dict[str, list[Path]]:
     submissions: dict[str, list[Path]] = defaultdict(list)
-    for path in root.rglob("submission-*.*"):
-        if ".git" in path.parts or not path.is_file():
+    submissions_root = root / SUBMISSIONS_DIRECTORY
+    if not submissions_root.exists():
+        return {}
+
+    for problem_directory in submissions_root.iterdir():
+        if not problem_directory.is_dir():
             continue
-        submissions[path.parent.name].append(path.relative_to(root))
+        for path in problem_directory.glob("submission-*.*"):
+            if path.is_file():
+                submissions[problem_directory.name].append(path.relative_to(root))
     return {slug: sorted(paths) for slug, paths in submissions.items()}
 
 
@@ -49,7 +56,7 @@ def git_submission_history(
         "--format=@@%aI",
         "--name-only",
         "--",
-        ":(glob)**/submission-*.*",
+        ":(glob)Data Structures & Algorithms/*/submission-*.*",
     ]
     result = subprocess.run(
         command,
@@ -77,7 +84,7 @@ def git_submission_history(
     return activity_dates, latest_by_slug
 
 
-def calculate_streaks(activity_dates: set[date], today: date) -> tuple[int, int]:
+def calculate_streaks(activity_dates: set[date]) -> tuple[int, int]:
     if not activity_dates:
         return 0, 0
 
@@ -91,16 +98,12 @@ def calculate_streaks(activity_dates: set[date], today: date) -> tuple[int, int]
         else:
             run = 1
 
-    latest = ordered[-1]
-    if latest < today - timedelta(days=1):
-        return 0, best
-
-    current = 1
-    cursor = latest
+    latest_streak = 1
+    cursor = ordered[-1]
     while cursor - timedelta(days=1) in activity_dates:
-        current += 1
+        latest_streak += 1
         cursor -= timedelta(days=1)
-    return current, best
+    return latest_streak, best
 
 
 def progress_bar(completed: int, total: int, width: int = 14) -> str:
@@ -127,13 +130,12 @@ def render_tracker(
     submissions: dict[str, list[Path]],
     activity_dates: set[date],
     latest_by_slug: dict[str, date],
-    today: date,
 ) -> str:
     catalog_by_slug = {problem["slug"]: problem for problem in catalog}
     solved = set(submissions) & set(catalog_by_slug)
     uncatalogued = set(submissions) - set(catalog_by_slug)
     total_submissions = sum(len(paths) for paths in submissions.values())
-    current_streak, best_streak = calculate_streaks(activity_dates, today)
+    latest_streak, best_streak = calculate_streaks(activity_dates)
 
     difficulty_totals = {
         difficulty: sum(problem["difficulty"] == difficulty for problem in catalog)
@@ -162,11 +164,11 @@ def render_tracker(
         f"| Unique roadmap problems | **{len(solved)} / {len(catalog)}** |",
         f"| Synced submission files | **{total_submissions}** |",
         f"| Remaining problems | **{len(catalog) - len(solved)}** |",
-        f"| Current activity streak | **{current_streak} day{'s' if current_streak != 1 else ''}** |",
+        f"| Latest submission streak | **{latest_streak} day{'s' if latest_streak != 1 else ''}** |",
         f"| Best activity streak | **{best_streak} day{'s' if best_streak != 1 else ''}** |",
         f"| Latest submission activity | **{latest_activity}** |",
         "",
-        "> Counts are derived from unique problem folders containing `submission-*` files. Activity streaks use submission commit dates plus the historical dates recorded in `config/tracker.json`.",
+        "> Counts come from folder slugs under `Data Structures & Algorithms`. Activity streaks and last-active dates come only from commits that changed submission files.",
         "",
         "### Difficulty",
         "",
@@ -280,15 +282,11 @@ def replace_generated_section(readme: str, generated: str) -> str:
     return before + generated.rstrip("\n") + after
 
 
-def build_readme(today: date | None = None) -> str:
+def build_readme() -> str:
     catalog_document = load_json(CATALOG_PATH)
     config = load_json(CONFIG_PATH)
     timezone = ZoneInfo(str(config.get("timezone", "UTC")))
     activity_dates, latest_by_slug = git_submission_history(ROOT, timezone)
-    activity_dates.update(
-        date.fromisoformat(value)
-        for value in config.get("historical_activity_dates", [])
-    )
 
     current_readme = README_PATH.read_text(encoding="utf-8")
     generated = render_tracker(
@@ -296,7 +294,6 @@ def build_readme(today: date | None = None) -> str:
         discover_submissions(ROOT),
         activity_dates,
         latest_by_slug,
-        today or datetime.now(timezone).date(),
     )
     return replace_generated_section(current_readme, generated)
 
