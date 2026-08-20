@@ -5,13 +5,13 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 <!-- progress-tracker:start -->
 ## Progress
 
-**6 / 150 solved** · `█░░░░░░░░░░░░░░░░░░░` · **4.0%**
+**7 / 150 solved** · `█░░░░░░░░░░░░░░░░░░░` · **4.7%**
 
 | Metric | Value |
 |---|---:|
-| Unique roadmap problems | **6 / 150** |
-| Synced submission files | **11** |
-| Remaining problems | **144** |
+| Unique roadmap problems | **7 / 150** |
+| Synced submission files | **12** |
+| Remaining problems | **143** |
 | Latest submission streak | **1 day** |
 | Best activity streak | **1 day** |
 | Latest submission activity | **2026-08-20** |
@@ -23,14 +23,14 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | Difficulty | Progress | Completed |
 |---|---|---:|
 | Easy | `██░░░░░░░░░░░░` 10.7% | **3 / 28** |
-| Medium | `█░░░░░░░░░░░░░` 3.0% | **3 / 101** |
+| Medium | `█░░░░░░░░░░░░░` 4.0% | **4 / 101** |
 | Hard | `░░░░░░░░░░░░░░` 0.0% | **0 / 21** |
 
 ## Roadmap overview
 
 | Topic | Progress | Completed | Next unsolved |
 |---|---|---:|---|
-| Arrays & Hashing | `███████░░░` | **6 / 9** | [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) |
+| Arrays & Hashing | `████████░░` | **7 / 9** | [Valid Sudoku](https://neetcode.io/problems/valid-sudoku/question) |
 | Two Pointers | `░░░░░░░░░░` | **0 / 5** | [Valid Palindrome](https://neetcode.io/problems/is-palindrome/question) |
 | Sliding Window | `░░░░░░░░░░` | **0 / 6** | [Best Time to Buy And Sell Stock](https://neetcode.io/problems/buy-and-sell-crypto/question) |
 | Stack | `░░░░░░░░░░` | **0 / 6** | [Valid Parentheses](https://neetcode.io/problems/validate-parentheses/question) |
@@ -59,11 +59,12 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) ([solutions](Data%20Structures%20%26%20Algorithms/anagram-groups)) | Arrays & Hashing | Medium | 2 | 2026-08-20 |
 | [Top K Frequent Elements](https://neetcode.io/problems/top-k-elements-in-list/question) ([solutions](Data%20Structures%20%26%20Algorithms/top-k-elements-in-list)) | Arrays & Hashing | Medium | 1 | 2026-08-20 |
 | [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) ([solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)) | Arrays & Hashing | Medium | 2 | 2026-08-20 |
+| [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) ([solutions](Data%20Structures%20%26%20Algorithms/products-of-array-discluding-self)) | Arrays & Hashing | Medium | 1 | 2026-08-20 |
 
 ## Full NeetCode 150 checklist
 
 <details>
-<summary><strong>Arrays & Hashing</strong> — 6/9</summary>
+<summary><strong>Arrays & Hashing</strong> — 7/9</summary>
 
 - [x] [Contains Duplicate](https://neetcode.io/problems/duplicate-integer/question) · Easy · [solutions](Data%20Structures%20%26%20Algorithms/duplicate-integer)
 - [x] [Valid Anagram](https://neetcode.io/problems/is-anagram/question) · Easy · [solutions](Data%20Structures%20%26%20Algorithms/is-anagram)
@@ -71,7 +72,7 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 - [x] [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/anagram-groups)
 - [x] [Top K Frequent Elements](https://neetcode.io/problems/top-k-elements-in-list/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/top-k-elements-in-list)
 - [x] [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)
-- [ ] [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) · Medium
+- [x] [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) · Medium · [solutions](Data%20Structures%20%26%20Algorithms/products-of-array-discluding-self)
 - [ ] [Valid Sudoku](https://neetcode.io/problems/valid-sudoku/question) · Medium
 - [ ] [Longest Consecutive Sequence](https://neetcode.io/problems/longest-consecutive-sequence/question) · Medium
 
