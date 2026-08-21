@@ -10,7 +10,7 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | Metric | Value |
 |---|---:|
 | Unique roadmap problems | **8 / 150** |
-| Synced submission files | **17** |
+| Synced submission files | **18** |
 | Remaining problems | **142** |
 | Latest submission streak | **2 days** |
 | Best activity streak | **2 days** |
@@ -61,6 +61,12 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) ([solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)) | Arrays & Hashing | Medium | 3 | 2026-08-21 |
 | [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) ([solutions](Data%20Structures%20%26%20Algorithms/products-of-array-discluding-self)) | Arrays & Hashing | Medium | 2 | 2026-08-21 |
 | [Valid Sudoku](https://neetcode.io/problems/valid-sudoku/question) ([solutions](Data%20Structures%20%26%20Algorithms/valid-sudoku)) | Arrays & Hashing | Medium | 2 | 2026-08-21 |
+
+### Other synced problems
+
+These folders are tracked as submissions but are not part of the current NeetCode 150 catalog:
+
+- [number-of-students-unable-to-eat-lunch](Data%20Structures%20%26%20Algorithms/number-of-students-unable-to-eat-lunch) — 1 submission(s)
 
 ## Full NeetCode 150 checklist
 
