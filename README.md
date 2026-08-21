@@ -10,7 +10,7 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | Metric | Value |
 |---|---:|
 | Unique roadmap problems | **7 / 150** |
-| Synced submission files | **13** |
+| Synced submission files | **14** |
 | Remaining problems | **143** |
 | Latest submission streak | **2 days** |
 | Best activity streak | **2 days** |
@@ -58,7 +58,7 @@ Solutions synced automatically from [NeetCode](https://neetcode.io). The tracker
 | [Two Sum](https://neetcode.io/problems/two-integer-sum/question) ([solutions](Data%20Structures%20%26%20Algorithms/two-integer-sum)) | Arrays & Hashing | Easy | 1 | 2026-08-09 |
 | [Group Anagrams](https://neetcode.io/problems/anagram-groups/question) ([solutions](Data%20Structures%20%26%20Algorithms/anagram-groups)) | Arrays & Hashing | Medium | 2 | 2026-08-20 |
 | [Top K Frequent Elements](https://neetcode.io/problems/top-k-elements-in-list/question) ([solutions](Data%20Structures%20%26%20Algorithms/top-k-elements-in-list)) | Arrays & Hashing | Medium | 2 | 2026-08-21 |
-| [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) ([solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)) | Arrays & Hashing | Medium | 2 | 2026-08-20 |
+| [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode/question) ([solutions](Data%20Structures%20%26%20Algorithms/string-encode-and-decode)) | Arrays & Hashing | Medium | 3 | 2026-08-21 |
 | [Product of Array Except Self](https://neetcode.io/problems/products-of-array-discluding-self/question) ([solutions](Data%20Structures%20%26%20Algorithms/products-of-array-discluding-self)) | Arrays & Hashing | Medium | 1 | 2026-08-20 |
 
 ## Full NeetCode 150 checklist
